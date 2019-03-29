@@ -7,7 +7,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const webpack = require("webpack");
 
 module.exports = {
-  entry: ["babel-polyfill", "./src/index.js"],
+  entry: "./src/index.js",
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
@@ -47,7 +47,7 @@ module.exports = {
       },
       // more rules goes here
       {
-        test: /\.css$/,
+        test: /\.(css|sass|scss)$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -55,7 +55,8 @@ module.exports = {
               publicPath: "../"
             }
           },
-          "css-loader"
+          "css-loader",
+          "sass-loader"
         ]
       },
       {

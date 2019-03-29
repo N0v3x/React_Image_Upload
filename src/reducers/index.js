@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
+import imageReducer from "./imageUploadReducer";
 
 const rootReducer = combineReducers({
-  // add reducers here
-  // user: userReducer
+  imageReducer
 });
 
 export default rootReducer;
